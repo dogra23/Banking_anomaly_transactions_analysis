@@ -1,6 +1,18 @@
-Banking Transactions Anomaly Detection  
+# Heading 1 Banking Anomaly Transactions Analysis using SQL (PaySim Dataset)
 
-Detecting fraudulent transactions in financial systems is a critical problem.  
-This project demonstrates a **rule-based fraud detection system** using the **PaySim dataset** (~6M records).  
-We leverage **SQL** for anomaly detection and provide optional **Python & Power BI** components for deeper analysis.  
+This project focuses on detecting fraudulent and anomalous banking transactions using advanced SQL techniques such as Common Table Expressions (CTEs) and recursive queries.
+The dataset used is the PaySim financial transaction dataset, which simulates mobile money transfers to detect fraud patterns and money-laundering activities.
 
+# Heading 2 Key Objectives
+
+- item 1 Detect recursive fraudulent transaction chains using Recursive CTEs.
+- item 2 Analyze temporal patterns in fraudulent activity over multiple time steps.
+-item 3 Identify transactions with zero balance before or after transfers.
+-item 4 Validate data integrity by comparing computed and actual account balances.
+-item 5 Highlight suspicious patterns such as repeated transfers, large transaction amounts, and static balances.
+
+# Heading 2 Insights & Results
+- item 1 Identified multi-step money-laundering chains via recursive SQL logic.
+- item 2 Detected accounts with consecutive zero balances, signaling possible anomalies.
+- item 3 Verified balance consistency between computed and actual transaction data.
+- item 4 Demonstrated that SQL alone can perform powerful financial fraud analytics without external tools.
