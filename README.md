@@ -3,6 +3,10 @@
 This project focuses on detecting fraudulent and anomalous banking transactions using advanced SQL techniques such as Common Table Expressions (CTEs) and recursive queries.
 The dataset used is the PaySim financial transaction dataset, which simulates mobile money transfers to detect fraud patterns and money-laundering activities.
 
+## Project Overview
+The goal of this project is to analyze transaction data and identify potential fraud chains, anomalies, and inconsistencies in account balances.
+Through SQL-based exploration and pattern detection, the project demonstrates how we can leverage SQL for real-world fraud detection and financial data validation.
+
 ## Key Objectives
 
 - Detect recursive fraudulent transaction chains using Recursive CTEs.
@@ -16,6 +20,7 @@ The dataset used is the PaySim financial transaction dataset, which simulates mo
 - Detected accounts with consecutive zero balances, signaling possible anomalies.
 - Verified balance consistency between computed and actual transaction data.
 - Demonstrated that SQL alone can perform powerful financial fraud analytics without external tools.
+
 
 
 
