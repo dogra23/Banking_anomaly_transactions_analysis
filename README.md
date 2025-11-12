@@ -5,16 +5,17 @@ The dataset used is the PaySim financial transaction dataset, which simulates mo
 
 ## Key Objectives
 
-- item 1 Detect recursive fraudulent transaction chains using Recursive CTEs.
-- item 2 Analyze temporal patterns in fraudulent activity over multiple time steps.
-- item 3 Identify transactions with zero balance before or after transfers.
-- item 4 Validate data integrity by comparing computed and actual account balances.
-- item 5 Highlight suspicious patterns such as repeated transfers, large transaction amounts, and static balances.
+- Detect recursive fraudulent transaction chains using Recursive CTEs.
+- Analyze temporal patterns in fraudulent activity over multiple time steps.
+- Identify transactions with zero balance before or after transfers.
+- Validate data integrity by comparing computed and actual account balances.
+- Highlight suspicious patterns such as repeated transfers, large transaction amounts, and static balances.
 
 ## Insights & Results
-- item 1 Identified multi-step money-laundering chains via recursive SQL logic.
-- item 2 Detected accounts with consecutive zero balances, signaling possible anomalies.
-- item 3 Verified balance consistency between computed and actual transaction data.
-- item 4 Demonstrated that SQL alone can perform powerful financial fraud analytics without external tools.
+- Identified multi-step money-laundering chains via recursive SQL logic.
+- Detected accounts with consecutive zero balances, signaling possible anomalies.
+- Verified balance consistency between computed and actual transaction data.
+- Demonstrated that SQL alone can perform powerful financial fraud analytics without external tools.
+
 
 
