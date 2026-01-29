@@ -34,14 +34,14 @@ FROM fraud_chain;
 
 -- Analysis of rolling_fraud over last 4 steps
 
-with rolling_fraud as (
+with rolling_sum as (
     select nameOrig, step,
         SUM(isFraud) OVER (PARTITION BY nameOrig ORDER BY step ROWS BETWEEN 4 PRECEDING AND CURRENT ROW
         ) as fraud_rolling
     from transactions
 )
 Select * 
-From rolling_fraud
+From rolling_sum
 where fraud_rolling > 0;
 
 
