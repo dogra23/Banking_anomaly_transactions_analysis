@@ -1,23 +1,35 @@
 -- Detecting recursive fraudelent transactions using recursive CTEs
 use paysim;
-with recursive fraud_chain as(
-select nameOrig as sender_account,
-nameDest as receiver_account,
-step,
-amount,
-newbalanceOrig
-from transactions
-where isFraud = 1 and type = 'TRANSFER'
 
-union all
+WITH RECURSIVE fraud_chain AS (
+    SELECT
+        nameOrig AS origin,
+        nameDest AS current_account,
+        step,
+        amount,
+        1 AS chain_level,
+        CAST(CONCAT(nameOrig, ' -> ', nameDest) AS CHAR(2000)) AS chain_path
+    FROM transactions
+    WHERE isFraud = 1
+      
 
-select c.sender_account, t.nameDest,t.step,t.amount,t.newBalanceOrig
-from fraud_chain c 
-join transactions t
-on c.receiver_account = t.nameOrig and c.step < t.step
-where t.isFraud=1 and t.type = 'TRANSFER')
+    UNION ALL
 
-select * from fraud_chain;
+    SELECT
+        fc.origin,
+        t.nameDest,
+        t.step,
+        t.amount,
+        fc.chain_level + 1,
+        CAST(CONCAT(fc.chain_path, ' -> ', t.nameDest) AS CHAR(2000))
+    FROM fraud_chain fc
+    JOIN transactions t
+      ON fc.current_account = t.nameOrig
+     AND t.step > fc.step
+    WHERE fc.chain_level < 10
+)
+SELECT *
+FROM fraud_chain;
 
 
 -- Analysis of rolling_fraud over last 4 steps
