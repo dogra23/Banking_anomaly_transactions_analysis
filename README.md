@@ -21,6 +21,14 @@ Through SQL-based exploration and pattern detection, the project demonstrates ho
 - Verified balance consistency between computed and actual transaction data.
 - Demonstrated that SQL alone can perform powerful financial fraud analytics without external tools.
 
+## Note:
+The dataset used in this project is synthetically generated and intentionally contains inconsistencies.
+As a result, some balance audit queries flag a large number of invalid rows (≈ 52,000).
+
+This behavior is expected and reflects data quality issues introduced during synthetic data generation.
+The SQL logic and audit checks implemented here are production-valid and will work correctly on real-world transactional data, where such inconsistencies indicate genuine fraud or data corruption
+
+
 
 
 
